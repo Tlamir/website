@@ -90,10 +90,10 @@ function App() {
 
   const projects = [
     {
-      title: "AI-Powered Task Manager",
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80",
-      description: "A smart task management application that uses machine learning to prioritize and categorize tasks. Built with React, Node.js, and TensorFlow.js.",
-      link: "https://github.com/yourusername/project"
+      title: "OpenGL Bouncing DVD Logo",
+      image: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExanNlY3FwanZvaW51eDZobmQyaXp2bTF3Y3VseGUwNnl1dzZ5MjhsZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/P0N8Ghf7nfc87He749/giphy.gif",
+      description: "C++ application showcases a classic DVD logo bouncing around the screen, using OpenGL for graphics rendering",
+      link: "https://github.com/Tlamir/OpenGL_DVD_Logo"
     },
     {
       title: "Crypto Portfolio Tracker",
@@ -112,7 +112,7 @@ function App() {
   return (
     <div className="App">
       <nav className="navbar">
-        <h1>Your Name</h1>
+        <h1>Yigithan Guven</h1>
         <div className="nav-links">
           <a 
             href="#about" 
@@ -143,38 +143,17 @@ function App() {
           <div className="about-header">
             <h2>About Me</h2>
             <div className="about-title">
-              <span className="highlight">Full Stack Developer</span>
-              <span className="location">📍 San Francisco, CA</span>
+              <span className="highlight">Software Engineer</span>
             </div>
           </div>
           
           <div className="about-content">
             <p className="intro-text">
-              Hey there! 👋 I'm a passionate software engineer with 5+ years of experience 
-              in building modern web applications. Specializing in full-stack development 
-              with React, Node.js, and cloud technologies.
+            I'm a Software Engineer 💻 with a focus on creating well-rounded, optimized software solutions. My main skills are in C++, C#, and Unity, and I handle everything from developing core software and crafting user interfaces to optimizing performance—whatever's necessary to bring a project to life ✨. With a strong foundation in computer engineering, I also bring full-stack web development skills 🌐, working with tools like .NET, Angular, and SQL. Driven by curiosity, I’m always exploring new technologies to keep expanding my expertise!
             </p>
             
-            <p className="about-description">
-              Currently focused on developing scalable solutions and exploring emerging 
-              technologies in AI and cloud computing. I bring expertise in React, TypeScript, 
-              Node.js, and AWS, with a strong foundation in system design and best practices.
-            </p>
-
-            <div className="expertise-areas">
-              <div className="expertise-item">
-                <span className="expertise-title">Frontend Development</span>
-                <p>React · Next.js · TypeScript · Modern CSS</p>
-              </div>
-              <div className="expertise-item">
-                <span className="expertise-title">Backend Development</span>
-                <p>Node.js · Python · AWS · Microservices</p>
-              </div>
-              <div className="expertise-item">
-                <span className="expertise-title">Tools & Practices</span>
-                <p>CI/CD · Docker · Git · Agile Methodologies</p>
-              </div>
-            </div>
+            <h3>Skills</h3>
+            <p>Proficient in C++, C#, and Unity; experienced with .NET, Angular, SQL, and Python; familiar with JavaScript, MongoDB, and React Native. Strong command of Git, Linux, and optimization techniques, with additional knowledge in UI/UX design and performance tuning.</p>
           </div>
         </div>
       </section>
@@ -219,15 +198,15 @@ function App() {
       <section id="contact" className="section">
         <h2>Contact Me</h2>
         <div className="contact-links">
-          <a href="mailto:your.email@example.com" className="contact-button">
+          <a href="mailto:yigithanguven@gmail.com" className="contact-button">
             <HiMail className="contact-icon" />
             <span>Email</span>
           </a>
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="contact-button">
+          <a href="https://github.com/tlamir" target="_blank" rel="noopener noreferrer" className="contact-button">
             <FaGithub className="contact-icon" />
             <span>GitHub</span>
           </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="contact-button">
+          <a href="https://linkedin.com/in/yigithanguven" target="_blank" rel="noopener noreferrer" className="contact-button">
             <FaLinkedin className="contact-icon" />
             <span>LinkedIn</span>
           </a>
