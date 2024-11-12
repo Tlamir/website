@@ -1,0 +1,815 @@
+:root {
+  /* Main colors */
+  --dark-bg: #0A0A0B;
+  --card-bg: #141415;
+  --darker-card: #1A1A1B;
+  
+  /* Accent colors */
+  --accent-1: #00FFA3; /* Neon green */
+  --accent-2: #FF2E63; /* Pink */
+  --accent-3: #4E00FF; /* Purple */
+  --accent-4: #00D8FF; /* Cyan */
+  
+  /* Text colors */
+  --text-primary: #FFFFFF;
+  --text-secondary: #B3B3B3;
+  --text-muted: #666666;
+  
+  /* Gradients */
+  --gradient-1: linear-gradient(120deg, #00FFA3, #4E00FF);
+  --gradient-2: linear-gradient(120deg, #FF2E63, #00D8FF);
+  --gradient-glow: linear-gradient(
+    rgba(0, 255, 163, 0.1),
+    rgba(78, 0, 255, 0.1)
+  );
+  --accent-1-rgb: 0, 255, 163; /* RGB values for your accent color */
+  
+  /* New variables */
+  --bg-gradient-1: rgba(0, 255, 163, 0.03);
+  --bg-gradient-2: rgba(78, 0, 255, 0.04);
+  --bg-gradient-3: rgba(255, 46, 99, 0.03);
+  --darker-bg: #070708;
+  
+  /* Increased opacity for background accent colors */
+  --bg-accent-1: rgba(0, 255, 163, 0.08);  /* Neon green - increased from 0.05 */
+  --bg-accent-2: rgba(255, 46, 99, 0.08);  /* Pink - increased from 0.05 */
+  --bg-accent-3: rgba(78, 0, 255, 0.08);   /* Purple - increased from 0.05 */
+  --bg-accent-4: rgba(0, 216, 255, 0.08);  /* Cyan - increased from 0.05 */
+}
+
+body {
+  background-color: #070708;
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background: 
+    /* Base dark gradient - made slightly lighter */
+    linear-gradient(to bottom right, #0A0A0B, #111112),
+    
+    /* Larger, more visible gradient overlays */
+    radial-gradient(
+      1500px circle at 0% 0%,
+      var(--bg-accent-1) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      1300px circle at 100% 0%,
+      var(--bg-accent-3) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      1200px circle at 100% 100%,
+      var(--bg-accent-2) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      1000px circle at 20% 90%,
+      var(--bg-accent-4) 0%,
+      transparent 70%
+    );
+    
+  background-blend-mode: normal, screen, screen, screen, screen;
+  position: relative;
+}
+
+/* Optional: Add subtle movement to the background */
+@keyframes subtleFloat {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 2% 2%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.App {
+  animation: subtleFloat 20s ease-in-out infinite;
+}
+
+/* Ensure dark background extends to edges */
+body {
+  background-color: #0A0A0B;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.App::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(78, 0, 255, 0.03) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+}
+
+.navbar {
+  background: rgba(10, 10, 11, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 1.2rem 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    0 1px 0 rgba(255, 255, 255, 0.03);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo/Name styling */
+.navbar h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  background: linear-gradient(120deg, var(--accent-1), var(--accent-3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0.5px;
+  position: relative;
+  text-decoration: none; /* Ensure no underline */
+  display: inline-block; /* Ensure it behaves like a block element */
+}
+
+.navbar h1::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--gradient-1);
+  opacity: 0.3;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--text-primary);
+  text-decoration: none; /* Ensure no underline on links */
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  transition: all 0.4s ease;
+  position: relative;
+  background: transparent;
+  border: 1px solid transparent;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+/* Modern hover effect */
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 
+    0 0 20px rgba(var(--accent-1-rgb), 0.15),
+    0 0 2px rgba(var(--accent-1-rgb), 0.3);
+  transform: translateY(-1px);
+  color: var(--accent-1);
+}
+
+/* New active state styles */
+.nav-links a.active {
+  background: rgba(var(--accent-1-rgb), 0.1);
+  border: 1px solid rgba(var(--accent-1-rgb), 0.2);
+  color: var(--accent-1);
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optional: Add a subtle glow effect for active state */
+.nav-links a.active::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-1);
+  opacity: 0.1;
+  border-radius: 8px;
+  z-index: -1;
+}
+
+/* Remove the old underline effect */
+.nav-links a.active::after {
+  display: none;
+}
+
+/* Add symmetric glow effect for active state */
+.nav-links a.active::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-1);
+  opacity: 0.1;
+  border-radius: 8px;
+  z-index: -1;
+}
+
+/* Optional: Add a subtle pulse animation for active state */
+@keyframes subtlePulse {
+  0% { opacity: 0.1; }
+  50% { opacity: 0.15; }
+  100% { opacity: 0.1; }
+}
+
+.nav-links a.active::before {
+  animation: subtlePulse 2s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.8rem 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .navbar h1 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .nav-links {
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .nav-links a {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .contact-button {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+}
+
+.section {
+  padding: 4rem 2rem;
+}
+
+.about-content {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gradient-1);
+}
+
+.profile-photo {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 3px solid transparent;
+  background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+              var(--gradient-1) border-box;
+  transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.02);
+}
+
+.skill-tags span {
+  background: var(--darker-card);
+  color: var(--text-primary);
+  padding: 0.7rem 1.5rem;
+  margin: 0.5rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s ease;
+}
+
+.skill-tags span:hover {
+  border-color: var(--accent-1);
+  box-shadow: 0 0 20px rgba(0, 255, 163, 0.2);
+  transform: translateY(-2px);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 1.5rem;
+  padding-bottom: 1rem;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    800px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.06),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 10px 30px -10px rgba(var(--accent-1-rgb), 0.2);
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-links a {
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background: var(--darker-card);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-links a:hover {
+  border-color: var(--accent-4);
+  box-shadow: 0 0 20px rgba(0, 216, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.4rem;
+  background: var(--darker-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  font-size: 0.95rem;
+}
+
+.contact-icon {
+  font-size: 1.2rem;
+  transition: transform 0.4s ease;
+}
+
+.contact-button:hover .contact-icon {
+  transform: translateY(-2px);
+}
+
+/* Hover effects */
+.contact-button:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 
+    0 0 20px rgba(var(--accent-1-rgb), 0.15),
+    0 0 2px rgba(var(--accent-1-rgb), 0.3);
+  transform: translateY(-1px);
+  color: var(--accent-1);
+}
+
+.contact-button:hover .contact-icon {
+  transform: translateY(-2px);
+}
+
+/* Gradient glow effect */
+.contact-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-1);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+  border-radius: 8px;
+}
+
+.contact-button:hover::before {
+  opacity: 0.1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .contact-button {
+    width: 200px; /* Fixed width for mobile */
+  }
+}
+
+/* Glowing text effect for headings */
+h1, h2 {
+  position: relative;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animation for sections */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section {
+  animation: fadeIn 1s ease-out;
+}
+
+/* Responsive text */
+h1 { font-size: clamp(2rem, 5vw, 3rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+p { 
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--darker-card);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.project-card img:hover {
+  transform: scale(1.02);
+}
+
+/* Add these new styles for the About section */
+
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.about-header {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.about-title {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.highlight {
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.location {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.about-content {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.intro-text {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.expertise-areas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.expertise-item {
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.4s ease;
+}
+
+.expertise-item:hover {
+  transform: translateY(-5px);
+}
+
+.expertise-title {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--accent-1);
+}
+
+.expertise-item p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .about-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .expertise-areas {
+    grid-template-columns: 1fr;
+  }
+  
+  .intro-text {
+    font-size: 1.2rem;
+  }
+  
+  .about-description {
+    font-size: 1rem;
+  }
+}
+
+.project-link {
+  margin-top: auto;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.project-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: auto;
+  padding: 0.7rem 1.2rem;
+  background: var(--darker-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  font-size: 0.95rem;
+}
+
+/* Button icon */
+.button-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.4s ease;
+}
+
+/* Hover effects for button */
+.project-button:hover {
+  background: var(--card-bg);
+  border-color: var(--accent-1);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(var(--accent-1-rgb), 0.15);
+}
+
+.project-button:hover .button-icon {
+  transform: translateX(4px);
+}
+
+/* Gradient glow effect */
+.project-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-1);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+  border-radius: 8px;
+}
+
+.project-button:hover::before {
+  opacity: 0.1;
+}
+
+/* Make sure other hover animations in the site are consistent */
+.nav-links a {
+  transition: all 0.4s ease;
+}
+
+.project-card {
+  transition: all 0.4s ease;
+}
+
+.expertise-item {
+  transition: transform 0.4s ease;
+}
+
+.skill-tags span {
+  transition: all 0.4s ease;
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.4rem;
+  background: var(--darker-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  font-size: 0.95rem;
+}
+
+/* Hover effects for contact buttons */
+.contact-button:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 
+    0 0 20px rgba(var(--accent-1-rgb), 0.15),
+    0 0 2px rgba(var(--accent-1-rgb), 0.3);
+  transform: translateY(-1px);
+  color: var(--accent-1);
+}
+
+/* Gradient glow effect on hover */
+.contact-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-1);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+  border-radius: 8px;
+}
+
+.contact-button:hover::before {
+  opacity: 0.1;
+}
+
+/* Icon hover effect */
+.contact-button .button-icon {
+  transition: transform 0.4s ease;
+}
+
+.contact-button:hover .button-icon {
+  transform: translateY(-2px);
+}
+
+/* Add some padding to the contact section */
+#contact {
+  padding: 2rem 2rem; /* Adjust padding */
+  min-height: 60vh; /* Set a minimum height to ensure it's tall enough */
+  background: var(--dark-bg); /* Optional: Add a background color */
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items */
+  justify-content: center; /* Center items vertically */
+}
+
+/* About section styling */
+#about {
+  padding: 4rem 2rem; /* Adjust padding */
+  background: var(--dark-bg); /* Optional: Add a background color */
+  position: relative; /* For positioning */
+}
+
+/* About header styling */
+.about-header {
+  margin-bottom: 2rem; /* Space below the header */
+}
+
+/* Remove the top line */
+.about-header::before {
+  display: none; /* Ensure no line is displayed */
+}
