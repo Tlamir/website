@@ -2,6 +2,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { HiMail } from 'react-icons/hi';
+import { Link } from 'react-router-dom';
 
 function App() {
   const [activeSection, setActiveSection] = useState('about');
@@ -114,27 +115,27 @@ function App() {
       <nav className="navbar">
         <h1>Yigithan Guven</h1>
         <div className="nav-links">
-          <a 
-            href="#about" 
+          <Link 
+            to="#about" 
             className={activeSection === 'about' ? 'active' : ''}
             onClick={() => handleNavClick('about')}
           >
             About
-          </a>
-          <a 
-            href="#projects" 
+          </Link>
+          <Link 
+            to="#projects" 
             className={activeSection === 'projects' ? 'active' : ''}
             onClick={() => handleNavClick('projects')}
           >
             Projects
-          </a>
-          <a 
-            href="#contact" 
+          </Link>
+          <Link 
+            to="#contact" 
             className={activeSection === 'contact' ? 'active' : ''}
             onClick={() => handleNavClick('contact')}
           >
             Contact
-          </a>
+          </Link>
         </div>
       </nav>
 
