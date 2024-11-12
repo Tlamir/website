@@ -97,10 +97,10 @@ function App() {
       link: "https://github.com/Tlamir/OpenGL_DVD_Logo"
     },
     {
-      title: "Crypto Portfolio Tracker",
-      image: "https://images.unsplash.com/photo-1605792657660-596af9009e82?w=800&q=80",
-      description: "Real-time cryptocurrency portfolio tracker with price alerts and performance analytics. Utilizes WebSocket for live data and Chart.js for visualization.",
-      link: "https://github.com/yourusername/project"
+      title: "Optimization for Everyone",
+      image: "https://i.imgur.com/3bsVE75.jpeg",
+      description: "Optimization for Everyone is a powerful tool for comparing meta-heuristic algorithms, designed for easy experimentation and analysis. Users can adjust algorithm parameters and visualize convergence rates of up to three algorithms simultaneously in a single graph.",
+      link: "https://github.com/Optimization-for-Everyone/OptimizationForEveryone"
     },
     {
       title: "Smart Home IoT Dashboard",
