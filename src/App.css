@@ -816,3 +816,31 @@ p {
 .about-header::before {
   display: none; /* Ensure no line is displayed */
 }
+
+/* Footer Styles */
+.footer {
+  background-color: var(--dark-bg); /* Match the website's dark theme */
+  color: var(--text-primary); /* Use primary text color */
+  text-align: center;
+  padding: 15px 0; /* Padding for spacing */
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.footer p {
+  margin: 5px 0; /* Space between lines */
+  font-size: 0.9rem; /* Font size for mobile compatibility */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer {
+    padding: 10px 0; /* Adjust padding for mobile */
+  }
+
+  .footer p {
+    font-size: 0.8rem; /* Smaller font size on mobile */
+  }
+}

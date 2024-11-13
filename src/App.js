@@ -184,6 +184,13 @@ function App() {
           </a>
         </div>
       </section>
+
+      {/* Footer Section */}
+      <footer className="footer">
+        <p>Yigithan Guven</p>
+        <p>yigithanguvenn@gmail.com</p>
+        <p>© {new Date().getFullYear()}</p>
+      </footer>
     </div>
   );
 }
