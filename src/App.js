@@ -7,6 +7,8 @@ function App() {
   const [activeSection, setActiveSection] = useState('about');
 
   useEffect(() => {
+    const sections = document.querySelectorAll('section[id]');
+    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -16,51 +18,32 @@ function App() {
         });
       },
       {
-        threshold: 0.6, // Adjusts the visibility threshold to trigger observer
+        threshold: 0.5, // Trigger observer when 50% of section is visible
+        rootMargin: '0px 0px -40% 0px',
       }
     );
 
-    // Observe all sections
-    const sections = document.querySelectorAll('section[id]');
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
+    sections.forEach((section) => observer.observe(section));
 
-    return () => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+
       sections.forEach((section) => {
-        observer.unobserve(section);
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          setActiveSection(section.id);
+        }
       });
     };
-  }, []);
 
-  useEffect(() => {
-    const cards = document.querySelectorAll('.project-card');
-    
-    cards.forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        card.style.setProperty('--mouse-x', `${x}px`);
-        card.style.setProperty('--mouse-y', `${y}px`);
-      });
-    });
-  }, []);
+    window.addEventListener('scroll', handleScroll);
 
-  useEffect(() => {
-    const buttons = document.querySelectorAll('.project-button');
-    
-    buttons.forEach(button => {
-      button.addEventListener('mousemove', (e) => {
-        const rect = button.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        button.style.setProperty('--x', `${x}px`);
-        button.style.setProperty('--y', `${y}px`);
-      });
-    });
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const handleNavClick = (sectionId) => {
