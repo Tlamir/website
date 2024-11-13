@@ -791,9 +791,9 @@ p {
 
 /* Add some padding to the contact section */
 #contact {
-  padding: 2rem 2rem; /* Adjust padding */
-  min-height: 60vh; /* Set a minimum height to ensure it's tall enough */
-  background: var(--dark-bg); /* Optional: Add a background color */
+  padding: 1.5rem 1rem; /* Reduced padding for a more compact look */
+  min-height: 40vh; /* Set a minimum height to ensure it's tall enough */
+  background: var(--dark-bg); /* Ensure consistent background color */
   display: flex; /* Use flexbox for alignment */
   flex-direction: column; /* Stack items vertically */
   align-items: center; /* Center items */
@@ -822,7 +822,7 @@ p {
   background-color: var(--dark-bg); /* Match the website's dark theme */
   color: var(--text-primary); /* Use primary text color */
   text-align: center;
-  padding: 15px 0; /* Padding for spacing */
+  padding: 10px 0; /* Reduced padding for spacing */
   position: relative;
   bottom: 0;
   width: 100%;
@@ -830,14 +830,18 @@ p {
 }
 
 .footer p {
-  margin: 5px 0; /* Space between lines */
+  margin: 3px 0; /* Reduced space between lines */
   font-size: 0.9rem; /* Font size for mobile compatibility */
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  #contact {
+    padding: 1rem; /* Further reduce padding for mobile */
+  }
+
   .footer {
-    padding: 10px 0; /* Adjust padding for mobile */
+    padding: 8px 0; /* Adjust padding for mobile */
   }
 
   .footer p {
