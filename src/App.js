@@ -65,10 +65,10 @@ function App() {
       link: "https://github.com/Optimization-for-Everyone/OptimizationForEveryone"
     },
     {
-      title: "Smart Home IoT Dashboard",
-      image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=800&q=80",
-      description: "A comprehensive dashboard for managing IoT devices. Features real-time monitoring, automation rules, and energy consumption analytics.",
-      link: "https://github.com/yourusername/project"
+      title: "Sprite Sheet Generator",
+      image: "https://i.imgur.com/1yrKd4Y.png",
+      description: "This WPF application allows you to easily load multiple images, arrange them into a sprite sheet, and export the result in either PNG or JSON format",
+      link: "https://github.com/Tlamir/SpriteSheetGenerator"
     }
   ];
 
@@ -121,11 +121,11 @@ function App() {
           
           <div className="about-content">
             <p className="intro-text">
-            I'm a Software Engineer 💻 with a focus on creating well-rounded, optimized software solutions. My main skills are in C++, C#, and Unity, and I handle everything from developing core software and crafting user interfaces to optimizing performance—whatever's necessary to bring a project to life ✨. With a strong foundation in computer engineering, I also bring full-stack web development skills 🌐, working with tools like .NET, Angular, and SQL. Driven by curiosity, I’m always exploring new technologies to keep expanding my expertise!
+            I'm a Software Engineer 💻 with a focus on creating well-rounded, optimized software solutions. My main skills are in C++, C#, and Unity, and I handle everything from developing core software and crafting user interfaces to optimizing performance—whatever's necessary to bring a project to life ✨. With a strong foundation in computer engineering, I also bring full-stack web development skills 🌐, working with tools like .NET, React, and SQL. Driven by curiosity, I’m always exploring new technologies to keep expanding my expertise!
             </p>
             
             <h3>Skills</h3>
-            <p>Proficient in C++, C#, and Unity; experienced with .NET, Angular, SQL, and Python; familiar with JavaScript, MongoDB, and React Native. Strong command of Git, Linux, and optimization techniques, with additional knowledge in UI/UX design and performance tuning.</p>
+            <p>Proficient in C++, C#, and Unity; experienced with .NET, React, SQL, and Python; familiar with JavaScript, MongoDB, and React Native. Strong command of Git, Linux, and optimization techniques, with additional knowledge in UI/UX design and performance tuning.</p>
           </div>
         </div>
       </section>
