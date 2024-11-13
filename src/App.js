@@ -2,7 +2,6 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { HiMail } from 'react-icons/hi';
-import { Link } from 'react-router-dom';
 
 function App() {
   const [activeSection, setActiveSection] = useState('about');
@@ -17,7 +16,7 @@ function App() {
         });
       },
       {
-        rootMargin: '0px 0px -50% 0px', // Adjusts the trigger point
+        threshold: 0.6, // Adjusts the visibility threshold to trigger observer
       }
     );
 
@@ -64,29 +63,9 @@ function App() {
     });
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll('section[id]');
-      const scrollPosition = window.scrollY + window.innerHeight / 2; // Middle of the viewport
-
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-          setActiveSection(section.id);
-        }
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const handleNavClick = (section) => {
-    setActiveSection(section);
+  const handleNavClick = (sectionId) => {
+    setActiveSection(sectionId);
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const projects = [
@@ -115,27 +94,36 @@ function App() {
       <nav className="navbar">
         <h1>Yigithan Guven</h1>
         <div className="nav-links">
-          <Link 
-            to="#about" 
+          <a 
+            href="#about" 
             className={activeSection === 'about' ? 'active' : ''}
-            onClick={() => handleNavClick('about')}
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick('about');
+            }}
           >
             About
-          </Link>
-          <Link 
-            to="#projects" 
+          </a>
+          <a 
+            href="#projects" 
             className={activeSection === 'projects' ? 'active' : ''}
-            onClick={() => handleNavClick('projects')}
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick('projects');
+            }}
           >
             Projects
-          </Link>
-          <Link 
-            to="#contact" 
+          </a>
+          <a 
+            href="#contact" 
             className={activeSection === 'contact' ? 'active' : ''}
-            onClick={() => handleNavClick('contact')}
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick('contact');
+            }}
           >
             Contact
-          </Link>
+          </a>
         </div>
       </nav>
 
