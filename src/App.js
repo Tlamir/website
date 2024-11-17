@@ -70,6 +70,13 @@ function App() {
       description: "This WPF application allows you to easily load multiple images, arrange them into a sprite sheet, and export the result in either PNG or JSON format",
       link: "https://github.com/Tlamir/SpriteSheetGenerator"
     }
+    ,
+    {
+      title: "Crafted",
+      image: "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3VtdGJ4YWxnNDY0OG1hcDN2aXczYm50ZmlraW43ZnBtbTFjbWxidyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MPnRSluqDvOwnnevep/giphy-downsized-large.gif",
+      description: "Crafted is a Unity project designed to showcase a flexible and dynamic inventory system with features like item swapping, adjustable slot sizes, and gamepad support.",
+      link: "https://github.com/Tlamir/Crafted"
+    }
   ];
 
   return (
