@@ -40,9 +40,34 @@ function App() {
 
     window.addEventListener('scroll', handleScroll);
 
+    // New code for mouse movement on project cards
+    const cards = document.querySelectorAll('.project-card');
+    
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+
     return () => {
       sections.forEach((section) => observer.unobserve(section));
       window.removeEventListener('scroll', handleScroll);
+      // Cleanup event listeners for mouse movement
+      cards.forEach(card => {
+        card.removeEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+        });
+      });
     };
   }, []);
 
