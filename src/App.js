@@ -101,6 +101,12 @@ function App() {
       image: "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3VtdGJ4YWxnNDY0OG1hcDN2aXczYm50ZmlraW43ZnBtbTFjbWxidyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MPnRSluqDvOwnnevep/giphy-downsized-large.gif",
       description: "Crafted is a Unity project designed to showcase a flexible and dynamic inventory system with features like item swapping, adjustable slot sizes, and gamepad support.",
       link: "https://github.com/Tlamir/Crafted"
+    } ,
+    {
+      title: "Space Invader Raylib",
+      image: "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXV6ZGF4cGw3ZHp1NmVtdWViMXJrdms4ZG1icHV5YWdqYWZqcjkyOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LmzjR5n69ySN9eW8t2/giphy.gif",
+      description: "Space Invaders clone game developed using C++ and the Raylib",
+      link: "https://github.com/Tlamir/Space-Invaders-Raylib/"
     }
   ];
 
