@@ -78,6 +78,12 @@ function App() {
 
   const projects = [
     {
+      title: "Blade And Stone 2",
+      image: "https://i.imgur.com/Fh7ytZA.png",
+      description: "A top-down roguelike game built in C++. This project demonstrates the integration of modern C++ techniques with libraries like Raylib, Box2D, and LDtk.",
+      link: "https://github.com/Tlamir/BladeAndStone2"
+    },
+    {
       title: "OpenGL Bouncing DVD Logo",
       image: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExanNlY3FwanZvaW51eDZobmQyaXp2bTF3Y3VseGUwNnl1dzZ5MjhsZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/P0N8Ghf7nfc87He749/giphy.gif",
       description: "C++ application showcases a classic DVD logo bouncing around the screen, using OpenGL for graphics rendering",
